@@ -12,7 +12,7 @@ function criarLista() {
 //função de adicionar uma tarefa À lista
 function adicionar(elemento) {
     //evitar q de pra colocar valores vazios
-    if (input_tarefa.value == "") {
+    if (elemento == "") {
         return
     } else {
         //criar o li para encaixar a string em uma lista
@@ -85,6 +85,7 @@ function armazenar() {
         let TextoDasTarefas = elementos.innerText
         //retirar o termo "remover" que tá sendo capturado , ANTES de ser jogado dentro do array
         TextoDasTarefas = TextoDasTarefas.replace("Remover", "")
+        TextoDasTarefas = TextoDasTarefas.replace("\n", "")
         listaArray.push(TextoDasTarefas)
         console.log(listaArray)
     }
@@ -105,26 +106,9 @@ function extrairArmazenado() {
     let extrairLista = JSON.parse(dadosArmazenados)
     console.log(extrairLista)
     //inserir as strings no codigo, em lista
-    for (let tarefa of extrairLista) {
-        adicionar(tarefa)
+    for (let valores of extrairLista) {
+        adicionar(valores)
     }
 }
-
 //executar a extração do armazenamento sempre que a pagina carregar
 extrairArmazenado()
-
-//gabarito
-// function adicionarSalvo() {
-//     //resgatar os dados salvos
-//     const tarefas = localStorage.getItem("tarefas")
-
-//     //converter de volta de string pra um array
-//     const listaDeTarefas = JSON.parse(tarefas)
-//     console.log(listaDeTarefas)
-//     //escrever de volta no codigo
-//     for (let tarefa of listaDeTarefas) {
-//         adicionar(tarefa)
-//     }
-// }
-
-// adicionarSalvo()
