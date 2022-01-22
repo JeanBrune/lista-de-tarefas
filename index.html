@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modelo</title>
+  <link rel="stylesheet" href="./css/lista_tarefas.css">
+</head>
+
+<body>
+
+  <section class="container">
+    <div class="entrada">
+      <h1>Lista de tarefas</h1>
+      <input type="text" class="input_tarefa" placeholder="Digite sua tarefa" maxlength="40">
+      <button class="adicionar_btn" onclick="adicionar(input_tarefa.value)" >Adicionar à lista</button>
+    </div>
+
+    <div class="saida">
+<button class="remover_btn btn_escondido" onclick="">Remover</button >
+      <ul class="lista_tarefas">
+
+      </ul>
+    </div>
+
+  </section>
+
+  <script src="./js/lista_tarefas.js"></script>
+</body>
+
+</html>
