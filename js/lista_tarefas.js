@@ -6,6 +6,7 @@ let output_tarefa = document.querySelector(".lista_tarefas")
 //função de criar linha da lista de tarefas para receber os inputs adicionados
 function criarLista() {
     let liHTML = document.createElement("li")
+    liHTML.classList.add("listaItem")
     return liHTML
 }
 
@@ -112,3 +113,20 @@ function extrairArmazenado() {
 }
 //executar a extração do armazenamento sempre que a pagina carregar
 extrairArmazenado()
+
+//mudar classe quando tarefa foi feita e clicada
+document.addEventListener("click", function (itemCheck) {
+    //armazenar o exato local clicado numa variável
+    let linha = itemCheck.target
+    console.log(linha)
+    //identificar se o click foi no li
+    if (linha.classList.contains("listaItem"))  {
+        //Em caso positivo, remover o elemento li ao qual esse botão está apensado como filho
+        linha.classList.toggle("feito")
+        
+        console.log(`tarefa realizada`)
+        //salvar a informação de que uma tarefa foi apagada da lista
+        //armazenar()
+    }
+})
+
