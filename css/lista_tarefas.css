@@ -18,6 +18,10 @@ body {
   line-height: 1.5em;
 }
 
+h1{
+  text-transform: uppercase;
+}
+
 .container {
   max-width: 640px;
   min-width: 300px;
@@ -95,5 +99,17 @@ li{
   border-bottom: 2px solid rgb(86, 128, 190);
   text-align: justify;
 overflow-wrap: break-word;
+list-style-position: outside;
+}
 
+.feito{
+  color: green;
+  list-style: none;
+}
+
+.feito:before{
+  content: "✓";
+  font-weight: bold;
+  margin-right: 9px;
+  margin-left: -25px;
 }
