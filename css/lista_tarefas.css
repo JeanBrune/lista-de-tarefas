@@ -113,3 +113,8 @@ list-style-position: outside;
   margin-right: 9px;
   margin-left: -25px;
 }
+
+.limpar_lista{
+margin: 20px auto;
+padding: 5px;
+}
