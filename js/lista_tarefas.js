@@ -88,7 +88,8 @@ function armazenar() {
         TextoDasTarefas = TextoDasTarefas.replace("Remover", "")
         TextoDasTarefas = TextoDasTarefas.replace("\n", "")
         listaArray.push(TextoDasTarefas)
-        console.log(listaArray)
+        //console.log(listaArray)
+
     }
 
     //criar arquivo json em string
@@ -105,7 +106,7 @@ function extrairArmazenado() {
 
     //converter as informações devolta em string
     let extrairLista = JSON.parse(dadosArmazenados)
-    console.log(extrairLista)
+    //console.log(extrairLista)
     //inserir as strings no codigo, em lista
     for (let valores of extrairLista) {
         adicionar(valores)
@@ -114,19 +115,28 @@ function extrairArmazenado() {
 //executar a extração do armazenamento sempre que a pagina carregar
 extrairArmazenado()
 
+
 //mudar classe quando tarefa foi feita e clicada
 document.addEventListener("click", function (itemCheck) {
     //armazenar o exato local clicado numa variável
     let linha = itemCheck.target
-    console.log(linha)
+    //console.log(linha)
     //identificar se o click foi no li
-    if (linha.classList.contains("listaItem"))  {
+    if (linha.classList.contains("listaItem")) {
         //Em caso positivo, remover o elemento li ao qual esse botão está apensado como filho
         linha.classList.toggle("feito")
-        
-        console.log(`tarefa realizada`)
         //salvar a informação de que uma tarefa foi apagada da lista
-        //armazenar()
+        armazenar()
     }
 })
 
+
+
+//apagar tudo
+function limpar(listaToda) {
+    //selecionar todos os elementos da lista
+    let elementosLi = document.querySelector(".lista_tarefas")
+    //apagar os elementos
+    elementosLi.innerHTML = ""
+    armazenar()
+}
